@@ -468,7 +468,7 @@ void SimpleRouter::sendHostUnreachable(const Buffer &packet) {
 
     //处理IP
     pReplyIpv4->ip_id=0;
-    pReplyIpv4->ip_src=pIPv4->ip_dst;
+    pReplyIpv4->ip_src=outIface->ip;
     pReplyIpv4->ip_dst=pIPv4->ip_src;
     pReplyIpv4->ip_ttl=64;
     pReplyIpv4->ip_p=ip_protocol_icmp;
